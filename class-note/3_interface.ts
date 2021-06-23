@@ -43,10 +43,10 @@ var obj: StringRegexDictionary = {
 
 Object.keys(obj).forEach(function(value){});
 
-interface Person {
-    name: string;
-    age: number;
-}
+// interface Person {
+//     name: string;
+//     age: number;
+// }
 
 interface Developer extends Person{
     language: string;
