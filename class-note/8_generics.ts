@@ -44,3 +44,33 @@ const st = logText2<string>('sdfsd');
 st.split('');
 const nu = logText2<number>(20);
 nu.toLocaleString();
+
+
+interface dropDown<T> {
+    value:T;
+    selected : boolean;
+}
+
+const obj:dropDown<string> = {value:"asdf", selected:true};
+const obj2:dropDown<number> = {value : 30, selected:false};
+
+
+function logText3<T>(text:T[]):T[] {
+    console.log(text.length);
+    return text;
+}
+
+logText3(['sdfs']);
+
+//제네릭 타입제한 2
+interface LengthType {
+    length : number;
+}
+
+function logText4<T extends LengthType>(text:T):T{
+    text.length;
+    return text;
+}
+
+//logText4(30);
+logText4({length:30});

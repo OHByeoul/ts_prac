@@ -1,23 +1,27 @@
-interface Email {
-  value:string;
-  selected:boolean;
+interface DropDown<T>{
+  value: T;
+  selected: boolean;
 }
-const emails: Email[] = [
+// interface Email {
+//   value:string;
+//   selected:boolean;
+// }
+const emails: DropDown<string>[] = [
   { value: 'naver.com', selected: true },
   { value: 'gmail.com', selected: false },
   { value: 'hanmail.net', selected: false },
 ];
-interface NumberProducts {
-  value:number;
-  selected:boolean;
-}
-const numberOfProducts: NumberProducts[] = [
+// interface NumberProducts {
+//   value:number;
+//   selected:boolean;
+// }
+const numberOfProducts: DropDown<number>[] = [
   { value: 1, selected: true },
   { value: 2, selected: false },
   { value: 3, selected: false },
 ];
 
-function createDropdownItem(item: Email | NumberProducts) {
+function createDropdownItem(item: DropDown<string> | DropDown<number>) {
   const option = document.createElement('option');
   option.value = item.value.toString();
   option.innerText = item.value.toString();
