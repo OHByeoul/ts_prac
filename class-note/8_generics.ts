@@ -74,3 +74,15 @@ function logText4<T extends LengthType>(text:T):T{
 
 //logText4(30);
 logText4({length:30});
+
+interface ShoppingItem {
+    name: string;
+    price: number;
+    stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption:T):T {
+    return itemOption;
+}
+
+getShoppingItemOption("name");
